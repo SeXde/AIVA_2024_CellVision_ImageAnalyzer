@@ -1,10 +1,11 @@
 import glob
 import os.path
 import unittest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as et
 
 import src.cell_detector as cell_detector
 import test_constants
+import src.utils.io_utils as io_utils
 
 
 class TestCellDetector(unittest.TestCase):
@@ -16,7 +17,7 @@ class TestCellDetector(unittest.TestCase):
 
         for jpg_file, xml_file in zip(jpg_files, xml_files):
 
-            tree = ET.parse(xml_file)
+            tree = et.parse(xml_file)
             root = tree.getroot()
             n_cels = len(root.findall(".//object"))
 
@@ -25,6 +26,6 @@ class TestCellDetector(unittest.TestCase):
         self.cell_detector = cell_detector.CellDetector()
 
     def test_detect_cells(self):
-        for i, (image, n_cels) in enumerate(self.images_and_n_cells):
+        for i, (image_path, n_cels) in enumerate(self.images_and_n_cells):
             with self.subTest(msg=f'Checking image {i}'):
-                self.assertEqual(n_cels, len(self.cell_detector.detect_cells(image)))
+                self.assertEqual(n_cels, len(self.cell_detector.detect_cells(io_utils.load_image(image_path))))
