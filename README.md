@@ -1,0 +1,2 @@
+# AIVA_2024_CellVision_ImageAnalyzer
+Cell detector
