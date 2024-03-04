@@ -8,9 +8,7 @@ import test_constants
 
 
 class TestCellDetector(unittest.TestCase):
-
     def setUp(self):
-
         jpg_files = sorted(glob.glob(f'{os.path.join(test_constants.IMAGES_PATH, "*.jpg")}'))
         xml_files = sorted(glob.glob(f'{os.path.join(test_constants.IMAGES_PATH, "*.xml")}'))
 

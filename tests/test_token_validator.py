@@ -3,7 +3,6 @@ import src.token_validator as token_validator
 
 
 class TestTokenValidator(unittest.TestCase):
-
     def setUp(self):
         self.valid_tokens = ['asd', 'asd1', 'asd3']
         self.token_validator = token_validator.TokenValidator()

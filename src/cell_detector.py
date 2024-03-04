@@ -5,5 +5,5 @@ class CellDetector:
     def __init__(self):
         pass
 
-    def detect_cells(self, image_path: str) -> np.ndarray:
+    def detect_cells(self, image: np.ndarray) -> np.ndarray:
         pass
