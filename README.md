@@ -2,6 +2,8 @@
 **CellVision ImageAnalyzer** allows to detect and locate cells in microscopy images.
 The service can be used easily via API REST.
 
+> This is the `master` branch, it contains the last stable release. To check the latest changes, check the `develop` branch.
+
 # How to use
 > This section will be documented as soon as the API details are set in stone.
 
