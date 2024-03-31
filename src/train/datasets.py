@@ -5,7 +5,7 @@ import glob
 import torch
 from torch.utils.data import Dataset, DataLoader
 from xml.etree import ElementTree as et
-from train_utils import collate_fn, get_train_transform, get_valid_transform
+import src.train.train_utils as train_utils
 
 
 class CustomDataset(Dataset):
@@ -95,35 +95,22 @@ class CustomDataset(Dataset):
 
 
 def create_train_dataset(img_dir, classes, resize=640):
-    train_dataset = CustomDataset(img_dir, resize, resize, classes, get_train_transform())
+    train_dataset = CustomDataset(img_dir, resize, resize, classes, train_utils.get_train_transform())
     return train_dataset
 
 
 def create_valid_dataset(img_dir, classes, resize=640):
-    valid_dataset = CustomDataset(img_dir, resize, resize, classes, get_valid_transform())
+    valid_dataset = CustomDataset(img_dir, resize, resize, classes, train_utils.get_valid_transform())
     return valid_dataset
 
 
 def create_train_loader(train_dataset, batch_size, num_workers=0):
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True,
-                              num_workers=num_workers, collate_fn=collate_fn, drop_last=False)
+                              num_workers=num_workers, collate_fn=train_utils.collate_fn, drop_last=False)
     return train_loader
 
 
 def create_valid_loader(valid_dataset, batch_size, num_workers=0):
     valid_loader = DataLoader(valid_dataset, batch_size=batch_size, shuffle=False,
-                              num_workers=num_workers, collate_fn=collate_fn, drop_last=False)
+                              num_workers=num_workers, collate_fn=train_utils.collate_fn, drop_last=False)
     return valid_loader
-
-
-if __name__ == '__main__':
-    from train_constants import TRAIN, RESIZE_TO, CLASSES, VALID
-    from train_utils import show_transformed_image
-
-    dataset_train = create_train_dataset(TRAIN, CLASSES, RESIZE_TO)
-    loader_train = create_train_loader(dataset_train, batch_size=2, num_workers=0)
-    show_transformed_image(loader_train)
-
-    dataset_valid = create_valid_dataset(VALID, CLASSES, RESIZE_TO)
-    loader_valid = create_valid_loader(dataset_valid, batch_size=2, num_workers=0)
-    show_transformed_image(loader_valid)
