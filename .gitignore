@@ -160,4 +160,6 @@ cython_debug/
 #.idea/
 .idea/
 cellvision/
-tests/resources/
+test/resources/
+src/resources/
+src/train/outputs/
