@@ -6,6 +6,7 @@ import xml.etree.ElementTree as et
 import src.cell_detector as cell_detector
 import test_constants
 import src.utils.io_utils as io_utils
+import src.utils.model_utils as model_utils
 
 
 class TestCellDetector(unittest.TestCase):
@@ -28,4 +29,6 @@ class TestCellDetector(unittest.TestCase):
     def test_detect_cells(self):
         for i, (image_path, n_cels) in enumerate(self.images_and_n_cells):
             with self.subTest(msg=f'Checking image {i}'):
-                self.assertEqual(n_cels, len(self.cell_detector.detect_cells(io_utils.load_image(image_path))))
+                image = io_utils.load_image(image_path)
+                bboxes = self.cell_detector.detect_cells(image)
+                self.assertEqual(n_cels, len(bboxes))
