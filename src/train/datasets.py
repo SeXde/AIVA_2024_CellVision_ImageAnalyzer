@@ -6,6 +6,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from xml.etree import ElementTree as et
 import src.train.train_utils as train_utils
+import src.utils.io_utils as io_utils
 
 
 class CustomDataset(Dataset):
@@ -29,7 +30,7 @@ class CustomDataset(Dataset):
         image_path = os.path.join(self.img_path, image_name)
         if not os.path.exists(image_path):
             raise ValueError(f'Image "{image_path}" not found')
-        image = cv2.imread(image_path)
+        image = io_utils.load_image(image_path)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
         image_resized = cv2.resize(image, (self.width, self.height))
         image_resized /= 255.0

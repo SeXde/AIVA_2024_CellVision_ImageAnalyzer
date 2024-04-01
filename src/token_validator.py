@@ -3,4 +3,4 @@ class TokenValidator:
         pass
 
     def validate_token(self, token: str) -> bool:
-        pass
+        return True

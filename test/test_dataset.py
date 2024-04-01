@@ -38,11 +38,13 @@ class TestDataset(unittest.TestCase):
         loader_train = datasets.create_train_loader(dataset_train, batch_size=2, num_workers=0)
 
         train_images_len = len(os.listdir(constants.TRAIN_IMAGES_PATH))
-        self.assertEqual(train_images_len, len(loader_train))
+        self.assertGreater(len(loader_train), 0)
+        self.assertEqual(train_images_len, len(dataset_train))
 
         dataset_valid = datasets.create_valid_dataset(constants.VAL_IMAGES_PATH, train_constants.CLASSES,
                                                       train_constants.RESIZE_TO)
         loader_valid = datasets.create_valid_loader(dataset_valid, batch_size=2, num_workers=0)
 
         val_images_len = len(os.listdir(constants.VAL_IMAGES_PATH))
-        self.assertEqual(val_images_len, len(loader_valid))
+        self.assertGreater(len(loader_valid), 0)
+        self.assertEqual(val_images_len, len(dataset_valid))
