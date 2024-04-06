@@ -2,38 +2,43 @@
 **CellVision ImageAnalyzer** allows to detect and locate cells in microscopy images.
 The service can be used easily via API REST.
 
-# How to use
-## Using without the API
-### Dependencies
-- Python 3.11
-- Install PyTorch with GPU if desired.
-- Library versions are described in `requirements.txt`.
-- You will need a trained model to run the program. You can request the trained model from us or train your own.
-
-To install the libraries automatically::
-> Install PyTorch with GPU support first if desired.
-> [PyTorch installation docs](https://pytorch.org/get-started/locally/)
-
-The rest of the libraries can be automatically installed using:
-```bash
-pip install -r requirements.txt
-```
-
-### How to download the project?
+# How to download the project?
 To download the project we recommend using:
 ```bash
 git clone https://github.com/SeXde/AIVA_2024_CellVision_ImageAnalyzer.git
 ```
 For all the ways to download a project from GitHub we recommend checking the [official documentation](https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github).
 
+# How to use
+## Using without the API
+### Dependencies
+- Python 3.10
+- Install PyTorch with GPU support if desired.
+- Library versions are described in `requirements.txt`.
+- You will need a trained model to run the program. You can request the trained model from us or train your own.
+
+To install the libraries automatically:
+> Install PyTorch with GPU support first if desired.
+> [PyTorch installation docs](https://pytorch.org/get-started/locally/)
+
+The rest of the libraries can be installed manually or using:
+```bash
+pip install -r requirements.txt
+```
+
 ### How to run
 To run the program simply create a file like the one in the `./examples/args_example.py` directory and run it using Python with the appropriate image path as the first argument.
+
+If you just want to test if the application is ready and working, you can run the tests instead.
 
 #### Additional examples
 To use the cell detection capabilities of **CellVision ImageAnalyzer**, you can:
 - Check our examples in the `./example` directory.
 - Check our tests in the `./test` directory.
 
+
+## Using with the API
+> This section is available yet. Will be documented as soon as the API is set up and working!
 
 # Architecture
 
@@ -56,11 +61,15 @@ It contains:
 
 # Testing
 To easily run the tests we recommend using your IDE testing tools.
+You can also run:
+```bash
+python -m unittest discover test
+```
 
 The tests can also be checked as examples to understand the program behaviour.
 
 # Branches
 This project uses GitHub flow, where:
-- **Master:** contains the last stable release.
-- **Develop:** contains the latest changes.
+- **master:** contains the last stable release.
+- **develop:** contains the latest changes.
 - **feature/*:** contains feature branches with individual features in each one.
