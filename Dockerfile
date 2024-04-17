@@ -26,5 +26,5 @@ LABEL maintainer="avberdote <avberdote@hotmail.com>"
 # RUN python -m unittest discover tests/
 
 # Run main.py when the container launches
-CMD["pwd"]
+CMD ["pwd"]
 CMD ["uvicorn", "main:app", "--host", "127.0.0.1", "--port", "80"]
