@@ -2,7 +2,7 @@
 FROM python:3.11-slim
 
 # Set the working directory in the container
-WORKDIR /src
+WORKDIR "/src"
 
 # Copy the requirements file into the container at /src
 COPY requirements.txt /src/
@@ -26,4 +26,5 @@ LABEL maintainer="avberdote <avberdote@hotmail.com>"
 # RUN python -m unittest discover tests/
 
 # Run main.py when the container launches
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD["pwd"]
+CMD ["uvicorn", "main:app", "--host", "127.0.0.1", "--port", "80"]
