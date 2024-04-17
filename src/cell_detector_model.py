@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 import numpy as np
-import src.utils.model_utils as model_utils
-import src.train.train_constants as train_constants
+import utils.model_utils as model_utils
+import train.train_constants as train_constants
 import torch
-import src.constants as constants
+import constants
 import cv2
 
 
