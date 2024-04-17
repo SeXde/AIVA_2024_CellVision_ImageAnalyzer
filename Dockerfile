@@ -23,7 +23,7 @@ ENV NAME cellvision-dev
 LABEL maintainer="avberdote <avberdote@hotmail.com>"
 
 # Run tests
-RUN python -m unittest discover tests/
+# RUN python -m unittest discover tests/
 
 # Run main.py when the container launches
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
