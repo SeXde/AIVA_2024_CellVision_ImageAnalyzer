@@ -1,6 +1,6 @@
 class TokenValidator:
     def __init__(self):
-        pass
+        self.valid_tokens = {'dev-token-1738-r3mi-b0i2z'}
 
     def validate_token(self, token: str) -> bool:
-        return True
+        return token in self.valid_tokens
