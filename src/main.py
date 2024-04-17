@@ -18,8 +18,6 @@ common_path = '/cell-detections'
 
 # Decorator to verify token
 def verify_token(token: str = Header(...)):
-    print('klk')
-    print(validator.validate_token(token))
     if not validator.validate_token(token):
         raise HTTPException(status_code=401, detail="Unauthorized")
 
