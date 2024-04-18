@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 import numpy as np
-import utils.model_utils as model_utils
-import train.train_constants as train_constants
+import src.utils.model_utils as model_utils
+import src.train.train_constants as train_constants
 import torch
-import constants
+from src import constants
 import cv2
 
 
@@ -21,7 +21,6 @@ class CellDetectorModel(ABC):
 
 
 class FCOSCellDetectorModel(CellDetectorModel):
-
     def __init__(self):
         self.model = None
         super().__init__()

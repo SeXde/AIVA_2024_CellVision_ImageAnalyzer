@@ -3,7 +3,7 @@ import torch
 from functools import partial
 from torchvision.models.detection.fcos import FCOSClassificationHead
 import cv2
-import train.train_constants as train_constants
+from src.train import train_constants
 
 
 def create_fcos_model(num_classes=91, min_size=640, max_size=640):

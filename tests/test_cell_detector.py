@@ -44,6 +44,7 @@ class TestCellDetector(unittest.TestCase):
             with self.subTest(msg=f'Checking image {i}'):
                 image = io_utils.load_image(image_path)
                 bboxes = self.cell_detector.detect_cells(image)
+                print(bboxes)
                 self.assertEqual(n_cels, len(bboxes))
                 real_cels = image.copy()
                 draw_bounding_boxes(real_cels, xml_file)

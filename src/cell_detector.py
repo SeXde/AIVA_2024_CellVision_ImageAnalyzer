@@ -1,5 +1,5 @@
 import numpy as np
-import cell_detector_model
+from src import cell_detector_model
 
 
 class CellDetector:
