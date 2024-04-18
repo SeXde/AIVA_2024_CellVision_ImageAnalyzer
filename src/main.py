@@ -5,10 +5,10 @@ import numpy as np
 from fastapi.responses import FileResponse
 import tempfile
 
-import utils.model_utils as model_utils
+from src.utils import model_utils
 import zipfile
-import cell_detector
-import token_validator
+from src import cell_detector, token_validator
+
 
 app = FastAPI()
 detector = cell_detector.CellDetector()
