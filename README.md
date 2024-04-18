@@ -12,7 +12,7 @@ For all the ways to download a project from GitHub we recommend checking the [of
 # How to use
 ## Using without the API
 ### Dependencies
-- Python 3.10
+- Python 3.11
 - Install PyTorch with GPU support if desired.
 - Library versions are described in `requirements.txt`.
 - You will need a trained model to run the program. You can request the trained model from us or train your own.
@@ -63,7 +63,7 @@ It contains:
 To easily run the tests we recommend using your IDE testing tools.
 You can also run:
 ```bash
-python -m unittest discover test
+python -m unittest discover tests
 ```
 
 The tests can also be checked as examples to understand the program behaviour.
