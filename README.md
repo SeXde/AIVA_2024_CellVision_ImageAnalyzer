@@ -56,7 +56,7 @@ docker run -it --rm -p 80:80 lsedev/cellvision:latest
 ```
 
 ### Using the source code
-If you already have the source files downloaded, just run the following command on  to start the local server:
+If you already have the source files downloaded, just run the following command to start the local server:
 ```bash
 uvicorn src.main:app --host 0.0.0.0 --port 80
 ```
