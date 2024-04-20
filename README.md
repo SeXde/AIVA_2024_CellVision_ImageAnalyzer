@@ -42,8 +42,8 @@ There are two ways to use the API, directly from the source and from Docker.
 We recommend the Docker version as it also includes the trained model.
 
 ### Using Docker
-Using Docker is the easiest and most straightforward approach to executing the API.
-> To run the commands you need to have Docker and DockerHub installed and running!
+Using Docker is the easiest and most straightforward approach to execute the API.
+> To run the Docker commands you need to have Docker and DockerHub installed and running!
 
 Just download the Docker image from DockerHub using:
 ```bash
@@ -64,7 +64,7 @@ You can choose a different port other than 80 if that one is already occupied.
 
 ## Use the Swagger UI
 Both the Docker and the source versions include the [OpenAPI/Swagger](https://swagger.io/specification/) UI for easy testing.
-To open it up just go to http://127.0.0.1:80/docs on your browser.
+To open it up just go to http://127.0.0.1:80/docs on your browser (after starting the local server).
 
 # Architecture
 
