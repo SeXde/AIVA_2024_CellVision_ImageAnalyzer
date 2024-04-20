@@ -26,7 +26,7 @@ jobs:
         if [[ $GITHUB_REF == refs/heads/develop ]]; then
           ARTIFACT_NAME=${{ secrets.DOCKERHUB_USERNAME }}/cellvision:latest-SNAPSHOT
         elif [[ $GITHUB_REF == refs/heads/master ]]; then
-          ARTIFACT_NAME=${{ secrets.DOCKERHUB_USERNAME }}/cellvision:latest
+          ARTIFACT_NAME=${{ secrets.DOCKERHUB_USERNAME }}/cellvision:latest-MASTER
         fi
         echo "::set-output name=artifact_name::$ARTIFACT_NAME"
 
