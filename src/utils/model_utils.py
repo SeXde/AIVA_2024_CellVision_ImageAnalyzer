@@ -3,7 +3,7 @@ import torch
 from functools import partial
 from torchvision.models.detection.fcos import FCOSClassificationHead
 import cv2
-import src.train.train_constants as train_constants
+from src.train import train_constants
 
 
 def create_fcos_model(num_classes=91, min_size=640, max_size=640):
@@ -57,7 +57,7 @@ def model_outputs_to_bbox(outputs, orig_image, image, score_threshold=0.6, nms_t
         return bboxes
 
 
-def print_bboxes(image, bboxes):
+def print_bboxes(image, bboxes, print_image=True):
     for (x1, y1), (x2, y2) in bboxes:
         cv2.rectangle(image,
                       (x1, y1),
@@ -72,5 +72,7 @@ def print_bboxes(image, bboxes):
                     (0, 0, 255),
                     2,
                     lineType=cv2.LINE_AA)
-    cv2.imshow('Cells', image)
-    cv2.waitKey(0)
+    if print_image:
+        cv2.imshow('Cells', image)
+        cv2.waitKey(0)
+    return image

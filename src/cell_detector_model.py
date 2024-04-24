@@ -3,7 +3,7 @@ import numpy as np
 import src.utils.model_utils as model_utils
 import src.train.train_constants as train_constants
 import torch
-import src.constants as constants
+from src import constants
 import cv2
 
 
@@ -21,7 +21,6 @@ class CellDetectorModel(ABC):
 
 
 class FCOSCellDetectorModel(CellDetectorModel):
-
     def __init__(self):
         self.model = None
         super().__init__()

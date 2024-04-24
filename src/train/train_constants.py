@@ -1,5 +1,5 @@
 import torch
-import src.constants as constants
+from src import constants
 
 BATCH_SIZE = 18 # Increase / decrease according to GPU memeory.
 RESIZE_TO = 640 # Resize the image for training and transforms.
